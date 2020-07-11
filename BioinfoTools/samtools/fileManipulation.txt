@@ -1,0 +1,3 @@
+converting sam file to a bam file
+
+samtools view -bS file.sam > file.bam
