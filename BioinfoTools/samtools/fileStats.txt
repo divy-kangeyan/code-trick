@@ -1,0 +1,20 @@
+*Check if the BAMS/SAM file is sorted
+
+samtools stats <file.bam> | grep “is sorted:"
+ 
+ 
+* Count the number of reads by chromosomes
+
+samtools idxstats  <file.bam>
+
+* Obtain stats regarding the size of GC-depth bins
+
+samtools stats —Gc-depth <file.bam>
+
+* Obtain the total read base count for a specific genomic region
+
+samtools bedcov <file.bed> <file.bam>
+
+* Compute the depth at each position or region
+
+samtools depth <file.bam>

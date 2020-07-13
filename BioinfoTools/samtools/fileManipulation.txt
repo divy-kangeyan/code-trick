@@ -1,3 +1,7 @@
-converting sam file to a bam file
+* converting sam file to a bam file
 
 samtools view -bS file.sam > file.bam
+
+* Index the SAM file:
+
+samtools index <file.bam>
