@@ -1,0 +1,8 @@
+gsutil cp *fq.gz gs://fc-aa408f3a-3939-4ed6-9909025d9a4f3-602
+
+Deleting files in google buckets via terminal 
+
+gcloud auth login
+gsutil rm -r gs://fc-3f7b9ead-410b-4f9e-95f7-de60657ec3b5/*/call_bismark_pool/*/call-fastq2
+
+

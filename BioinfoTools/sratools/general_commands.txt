@@ -1,0 +1,8 @@
+SRA(Sequence Read Archive)
+——————————————————
+sra-tools can be used to perform analysis related to sra files
+
+sra-tools help you to access the data housed in SRA and convert them into fastq/fasta/bam 
+or other types of sequencing files
+
+sra-tools can also convert any type of sequencing file to and sra file

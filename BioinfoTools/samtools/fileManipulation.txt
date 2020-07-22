@@ -5,3 +5,7 @@ samtools view -bS file.sam > file.bam
 * Index the SAM file:
 
 samtools index <file.bam>
+
+* Call and phase heterozygous SNPs
+
+samtools phase <file.bam>

@@ -1,0 +1,15 @@
+* disk size for a specific directory: 
+
+du -sh <Name of the directory>
+
+*disk size for all directories (including hidden directories):
+
+du -ha --max-depth=1
+
+* Unzipping tar.gz file
+
+tar -xzf <file.tar.gz>
+
+* Unpack a tar file
+
+tar -xvf <file.tar>
