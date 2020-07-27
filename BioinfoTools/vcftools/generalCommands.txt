@@ -1,0 +1,7 @@
+* Filter by allele frequency 
+
+vcftools -gzvcf FileName.vcf.gz —max-mad 0.01 —recode —out outputFl
+
+* Output only the SNPs from the VCF file
+
+vcftools --vcf input_file.vcf --remove-indels --recode --recode-INFO-all --out SNPs_only

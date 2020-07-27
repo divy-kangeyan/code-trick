@@ -2,7 +2,6 @@
 
 samtools stats <file.bam> | grep “is sorted:"
  
- 
 * Count the number of reads by chromosomes
 
 samtools idxstats  <file.bam>

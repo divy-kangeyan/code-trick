@@ -1,0 +1,12 @@
+* Extract all the sample names from a multisample vcd file
+
+bcftools query -l input.vcf.gz > inputSamples.txt
+
+* Remove any multi allelic SNPs from the VCF file
+
+bcftools view —max-alleles 2 input.vcf.gz
+
+* Subset multi genome vcf into smaller subsets
+
+bcftools view sample.vcf -S sample file -O z 
+[-O is to output vcf.gz file
