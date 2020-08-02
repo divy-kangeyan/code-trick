@@ -1,0 +1,32 @@
+key: 
+C = Ctrl
+M = Meta (usually 'alt')
+C-x-c means hold down Ctrl and type x and c without lifting up
+C-x C-c means type Ctrl x, then release the Ctrl button, then type Ctrl c  (whether you release or hold in ctrl as you type key combinations will tell emacs to do different things)
+
+C-a: move to beginning of line
+C-e: move to end of line
+C-p: move up one line
+C-n: move down one line
+I actually still use page-up and page-down to move more than one line, but there are emacs commands for that too.
+
+Undo whatever you did last: C-_  (hold in Ctrl, hold in shift, and type the hyphen key to get the _)
+Bail out of emacs command line: C-g
+
+C-x-c: close and exit; saves sessions that need it
+C-x-s: save sessions one at a time
+C-x-f: open a new buffer
+C-x-2: split window (you can split as many times as you want to create many frames)
+C-x-o: move to the next frame (this will also move to the emacs command line if it is open)
+
+C-s: search
+M-% - find and replace (type in what to search for in the emacs command line, hit enter, then type what to replace it with)
+
+C-x-k: kill buffer (closes the current window buffer but does not close all windows)
+C-space: turn highlighting on (this occurs even if you can't see the highlighting). C-space again to stop highlighting, although the selected region is still highlighted (even if you can't see it). This takes some getting used to.
+C-w: cut the highlighted space
+C-y: paste the clipboard
+C-k: cuts the rest of the line and saves it in the clipboard without having to highlight anything
+
+M-> move to end of buffer (hold in alt, then shift so you get the >
+M-< move to beginning of buffer

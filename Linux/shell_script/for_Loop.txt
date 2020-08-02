@@ -1,0 +1,14 @@
+for f in `cat $fileList `
+
+do
+
+        CMD="Rscript ${script} -i ${f}”
+        n=`qstat |wc -l`
+        while [ $n -gt 25 ]
+        do
+        	n=`qstat |wc -l`
+        done
+
+		echo $CMD|qsub -l h_vmem=20g -N test -cwd -o log
+
+done

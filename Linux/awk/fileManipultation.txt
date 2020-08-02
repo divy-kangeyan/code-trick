@@ -1,0 +1,23 @@
+* subtract a constant from nth column in  a text file
+
+awk '{print ($n - constant) }’ file.txt
+
+* get the first and last column of a file
+
+awk '{print $1, $NF}’ filename 
+
+* summing a column in tab separated file awk (Sum the nth column)
+
+awk -F ‘\t’ ‘{sum += 6}’ END {print sum;}’ filename
+
+* select all the lines in the file based on a string in a column
+
+awk ‘$N == “string"' originalFile > newFile (N - for the Nth column; string - string to be matched)
+
+* replace an entire column with a string:
+
+awk ‘{$n = ’string’} 1’ File (’string’ - string that replaces)
+
+* subtract a constant from the entire file (10 in this case)
+
+awk '{if(NR>1){for(i=2;i<=NF;i++){$(i)=$(i)-10;}}print;}' file.txt

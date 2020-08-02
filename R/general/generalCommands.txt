@@ -1,0 +1,4 @@
+* Convert a factor value to a numeric value, 
+* i.e. convert value column in the DayTimeDF data frame to a numeric vector
+
+as.numeric(levels(DayTimeDF$value)[DayTimeDF$value]) 
