@@ -1,0 +1,7 @@
+* Blast make a nucleotide database with fastqs (reference genome, local sequences etc.)
+
+blastn makeblastdb -in test.fastq -parse_seqids -dbtype nucl
+
+* Compare homology from sequences in the database (table output format)
+
+blastn  -query input.fasta  -subject genome.fasta  -outfmt 6

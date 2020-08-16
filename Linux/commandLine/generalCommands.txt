@@ -13,3 +13,44 @@ tar -xzf <file.tar.gz>
 * Unpack a tar file
 
 tar -xvf <file.tar>
+
+* cat multiple files with line breaks
+
+for f in *.txt; do (cat "${f}"; echo) >> combined.txt; done
+
+* Zip a folder:
+
+zip -r output.zip folder_to_be_zipped
+
+* Tar gzip an entire directory
+
+tar -zcvf output.tar.gz folder_to_be_zipped/ 
+
+* Find files with certain extension in all sub directories (absolute path) 
+but with some matching with the directory name
+
+find "$(pwd)" -wholename "*txt"
+
+* Search a string inside a file
+
+grep [string] * -lR
+
+
+* Generate a simulink to a folder 
+
+ln -s folderName simulinkFolderName
+
+
+* Clear the content of a file name File.ext
+
+> File.ext
+
+
+* Extract the first column in a csv file
+
+cat in.csv | cut -d, -f1
+
+
+* Tar unzip file
+
+tar -xf archive.tar.gz

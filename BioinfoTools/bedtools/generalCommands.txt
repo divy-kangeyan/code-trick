@@ -1,0 +1,3 @@
+* Intersect a vcf file based on a bed file
+
+bedtools intersect -a input.vcf -b File.bed > output.vcf

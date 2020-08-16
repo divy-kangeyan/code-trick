@@ -1,0 +1,60 @@
+* Convert plink format file to vcf file
+
+plink2vcf --inPlink somePlinkFile --outVcf out.vcf OR plink-1.9 --bfile somePlinkFile --recode vcf-iid --out outFile
+
+* LD pruning (takes input.vcf.gz, leave SNPs at least 1% with no repairs remaining with r^2 > 0.2, window size:5, step size:5)
+
+plink --vcf input.vcf.gz --maf 0.01 --indep-pairwise 50 5 0.2 --out chr19-clean 
+
+* Calculate genome-wide estimates of identity by descent (IBD); outputs gzipped file and exact refers to LD-pruned set of SNPs
+
+plink --vcf input.vcf.gz --genome gz --out in-clean --extract out.prune.in
+
+* Generate PCs (Removes samples in the related_samples.txt)
+
+plink --vcf input.vcf.gz --extract input.prune.in --remove related_samples.txt --pca var-wts --out out-clean
+==> Output: out-clean.eigenvec (stores the actual PCs)
+            out-clean.var (stores the SNP weights or loadings, reflecting how much each SNP contributes to each PC)
+            out-clean.eigenval (says how much of the overall genotypic variance each PC explains)
+            
+* Remove individuals with missing rate >10%
+
+plink --bfile inputDtaa --prune --mind 0.1 --make-bed --out outdata
+
+* Remove SNPs with with missing rate >10%, MAF<1% and HWE p<0.00000001
+
+plink --bfile inputData --geno 0.1 --maf 0.01 --hwe 0.00000001 --make-bed --out outData
+
+* Sex check
+
+plink --bfile CAMPdata2 --check-sex --out sexcheck
+
+* Subject outliers
+
+plink --bfile CAMPdata2 --neighbour 1 3
+
+* Prune SNPs that are independent and MAF>5%
+plink --bfile CAMPdata2 --maf 0.05 --indep-pairwise 50 5 0.05
+plink --bfile CAMPdata2 --extract plink.prune.in --make-bed --out CAMPdata2indep
+
+* Multidimensional scaling analysis
+
+plink --bfile CAMPdata2indep --genome --cluster --mds-plot 4
+
+* Additive model association analysis (Without adjustment for population substructure)
+
+plink --bfile CAMPdata2 --logistic --sex --out additive
+
+
+* Dominant model association analysis (Without adjustment for population substructure)
+
+plink --bfile CAMPdata2 --logistic --sex --out dominant
+
+
+* Recessive model association analysis (Without adjustment for population substructure)
+
+plink --bfile CAMPdata2 --logistic --sex --out recessive
+
+
+
+

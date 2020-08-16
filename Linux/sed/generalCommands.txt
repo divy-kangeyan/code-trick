@@ -1,0 +1,7 @@
+* Find string abc and replace it with string abcd in the file in.txt
+
+sed -i 's/abc/abcd/g' in.txt
+
+* Find the Nth line in a file
+
+sed -n ’N{p;q}’ Filename.ext

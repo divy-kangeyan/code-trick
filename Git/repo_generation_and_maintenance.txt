@@ -1,0 +1,60 @@
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Divyagash/code-trick.git
+git push -u origin master
+
+
+If the changes are made in the wrong branch
+
+git stash
+
+git checkout correct branch
+
+git stash apply
+
+ 
+
+Rebasing to the master 
+
+ 
+
+git checkout master
+
+ 
+
+git pull
+
+ 
+
+git checkout dkangeyan/DRAGEN-5723-randomUMIFix
+
+ 
+
+git rebase master
+
+ 
+
+Git will try to make the changes automatically, but it may get confused
+
+It will tell you if it couldn't automatically add your changes to any files, and ask you to fix them
+
+You'll usually see those as merge conflicts, where it will show you the code from master and 
+
+your code together, and ask you to integrate them.
+
+ 
+
+If it happens, make the changes and git add the file to mark the conflicted file as solved, 
+
+and run "git rebase --continue"
+
+ 
+
+git push -u origin branch_name
+
+ 
+
+Delete a local branch
+
+git branch -d localBranch

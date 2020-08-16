@@ -9,3 +9,12 @@ samtools index <file.bam>
 * Call and phase heterozygous SNPs
 
 samtools phase <file.bam>
+
+* Separating strand with samtools
+
+samtools view -bS -F 0x10 sample.bam > sample.forward.bam
+samtools view -bS -f 0x10 sample.bam > sample.reverse.bam
+
+* Extract reads from certain chromosome in certain positional range
+
+samtools view input.bam "chr1:1233290-1233390"

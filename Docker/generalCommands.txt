@@ -4,7 +4,28 @@ docker push : To push the directory
 * Pull the directory from the source
 docker pull
 
-get inside the docker environment to check the tools installed by docker
+* get inside the docker environment to check the tools installed by docker
 docker run --rm -it aryeelab/bismark /bin/bash: 
 
 docker build -t aryeelab/bsseq_aggregation .
+
+* Command to install packages in a docker file
+
+RUN apt-get install
+RUN cd /src && wget tool.tar.gz
+
+* Installing an R package from CRAN in a docker file
+
+RUN Rscript -e "install.packages('ggplot2',repos='http://R-Forge.R-project.org')" 
+
+* Installing an bioconductor package
+
+RUN Rscript -e "source('http://bioconductor.org/biocLite.R');biocLite('bsseq');"
+
+* Make a new directory
+
+RUN mkdir newDir
+
+* Copy files to a directory
+
+COPY some_scripts newDir
