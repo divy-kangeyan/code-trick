@@ -1,0 +1,41 @@
+* Generating a substring from a column
+
+CREATE TABLE t ( a TEXT, b TEXT );
+INSERT INTO t VALUES ( 'NY0123', 'US4567' );
+INSERT INTO t VALUES ( 'AZ9437', 'GB1234' );
+INSERT INTO t VALUES ( 'CA1279', 'FR5678' );
+SELECT * FROM t;
+
+SELECT SUBSTR(a, 1, 2) AS State, SUBSTR(a, 3) AS SCode, 
+  SUBSTR(b, 1, 2) AS Country, SUBSTR(b, 3) AS CCode FROM t;
+  
+* Searching within a result set using WHERE
+
+SELECT * FROM album
+  WHERE id IN (SELECT DISTINCT album_id FROM track WHERE duration <= 90)
+;
+
+* Creating a VIEW to visualize the data table
+
+CREATE VIEW trackView AS
+  SELECT id, album_id, title, track_number, 
+    duration / 60 AS m, duration % 60 AS s FROM track;
+SELECT * FROM trackView;
+
+* Deleting or dropping a view
+
+DROP VIEW IF EXISTS trackView;
+
+* Visualize a joined VIEW
+
+CREATE VIEW joinedAlbum AS
+  SELECT a.artist AS artist,
+      a.title AS album,
+      t.title AS track,
+      t.track_number AS trackno,
+      t.duration / 60 AS m,
+      t.duration % 60 AS s
+    FROM track AS t
+    JOIN album AS a
+      ON a.id = t.album_id
+;

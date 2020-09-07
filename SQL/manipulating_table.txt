@@ -1,0 +1,55 @@
+* Selecting Rows
+
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name;
+
+* Selecting first few Rows 
+
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5;
+
+* Selecting Columns
+
+SELECT Name AS Country, Region, Continent from Country;
+
+* Counting Rows
+
+SELECT COUNT(*) FROM Country WHERE Population > 100000000 AND Continent = 'Europe' ;
+
+* Create a table and insert rows into the table
+
+CREATE TABLE test (
+  a INTEGER,
+  b TEXT
+);
+
+INSERT INTO test VALUES ( 1, 'a' );
+INSERT INTO test VALUES ( 2, 'b' );
+INSERT INTO test VALUES ( 3, 'c' );
+
+* DROP TABLE if it exists
+
+DROP TABLE IF EXISTS test;
+
+* DELETE a row from the table
+
+DELETE FROM test WHERE a = 1;
+
+* Selecting Null value 
+
+SELECT * FROM test WHERE a = NULL; /SELECT * FROM test WHERE a IS NULL;
+SELECT * FROM test WHERE a IS NOT NULL;
+
+* Altering the table
+
+ALTER TABLE test ADD d TEXT;
+ALTER TABLE test ADD e TEXT DEFAULT 'panda';
+
+* Subsetting the table using WHERE, LIKE, and IN commands
+
+SELECT Name, Continent, Population FROM Country WHERE Population < 100000 AND Continent = 'Oceania' ORDER BY Population DESC;
+SELECT Name, Continent, Population FROM Country WHERE Name LIKE '%island%' ORDER BY Name;
+SELECT Name, Continent, Population FROM Country WHERE Continent IN ( 'Europe', 'Asia' ) ORDER BY Name;
+
+* selecting DISTINCT values in a table
+
+SELECT DISTINCT Continent FROM Country;
+

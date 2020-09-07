@@ -1,0 +1,28 @@
+* create a trigger
+
+CREATE TRIGGER newWidgetSale AFTER INSERT ON widgetSale
+    BEGIN
+        UPDATE widgetCustomer SET last_order_id = NEW.id WHERE widgetCustomer.id = NEW.customer_id;
+    END
+;
+
+* prevent updates
+
+CREATE TRIGGER updateWidgetSale BEFORE UPDATE ON widgetSale
+    BEGIN
+        SELECT RAISE(ROLLBACK, 'cannot update table "widgetSale"') FROM widgetSale
+            WHERE id = NEW.id AND reconciled = 1;
+    END
+;
+
+* Generate timestamps upon update
+
+CREATE TRIGGER stampSale AFTER INSERT ON widgetSale
+    BEGIN
+        UPDATE widgetSale SET stamp = DATETIME('now') WHERE id = NEW.id;
+        UPDATE widgetCustomer SET last_order_id = NEW.id, stamp = DATETIME('now')
+            WHERE widgetCustomer.id = NEW.customer_id;
+        INSERT INTO widgetLog (stamp, event, username, tablename, table_id)
+            VALUES (DATETIME('now'), 'INSERT', 'TRIGGER', 'widgetSale', NEW.id);
+    END
+;

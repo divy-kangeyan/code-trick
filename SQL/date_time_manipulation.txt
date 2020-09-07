@@ -1,0 +1,15 @@
+* Print current day and time
+
+SELECT DATETIME('now');
+
+* Print current day 
+
+SELECT DATE('now');
+
+* Print current time
+
+SELECT TIME('now');
+
+* Change the date and time by certain amount
+
+SELECT DATETIME('now', '+3 hours', '+27 minutes', '-1 day', '+3 years');

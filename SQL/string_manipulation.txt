@@ -1,0 +1,27 @@
+* Calculate the length of string in a column of the table
+
+SELECT Name, LENGTH(Name) AS Len FROM City ORDER BY Len DESC;
+
+* Extract a substring from a string (start at position 6, extract 3 characters):
+
+SELECT SUBSTR('this string', 6, 3);
+
+* Trim a certain character or whitspace from a string
+
+SELECT TRIM('   string   string   '); SELECT TRIM('...string...', '.')
+
+* Trim whitspace on the left
+
+SELECT LTRIM('   string   ');
+
+* Trim whitspace on the right
+
+SELECT RTRIM('   string   ');
+
+* Convert a string to all uppercase
+
+SELECT UPPER(Name) FROM City ORDER BY Name;
+
+* Convert a string to all lowercase
+
+SELECT LOWER(Name) FROM City ORDER BY Name;

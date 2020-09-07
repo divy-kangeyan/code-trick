@@ -1,0 +1,11 @@
+* Return the type of data type
+
+SELECT TYPEOF( 1 + 1 );
+
+* Integer division
+
+SELECT 1 / 2;
+
+* Round a number to certain decimal place
+
+SELECT ROUND(2.55555, 3);
