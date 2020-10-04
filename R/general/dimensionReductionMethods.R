@@ -13,6 +13,9 @@ colorLabel<-c()
 
 
 # LDA
+library(MASS)
+model <- lda(Species~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)
+plot(model)
 
 # t-SNE
 library(tsne)
