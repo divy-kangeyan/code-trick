@@ -1,4 +1,4 @@
-* Extract all the sample names from a multisample vcd file
+* Extract all the sample names from a multisample vcf file
 
 bcftools query -l input.vcf.gz > inputSamples.txt
 

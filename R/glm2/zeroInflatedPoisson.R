@@ -1,1 +1,3 @@
 # zeroInflatedPoisson.R 
+
+library(pscl)

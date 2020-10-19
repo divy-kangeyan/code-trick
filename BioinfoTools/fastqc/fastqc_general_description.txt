@@ -1,0 +1,22 @@
+# fastqc general command
+
+* running individual fastq 
+fastqc fastqFile --outdir=/some/other/dir/
+
+* running multiple fastq files
+
+fastqc fastqFile1 fastqFile2 fastqFile3 --outdir=/some/other/dir/
+
+Type of output that can be generated from fastqc
+- Basic statistics
+- Per base sequening quality
+- Per tile sequence quality
+- Per sequence quality scores
+- Per base sequence content
+- Per sequence GC content
+- Per base N content
+- Sequence Length Distribution
+- Sequence Duplication Levels
+- Overrepresented seqeunces
+- Adapter content
+- Kmer content
