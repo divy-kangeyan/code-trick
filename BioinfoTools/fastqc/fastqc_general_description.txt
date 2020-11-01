@@ -9,7 +9,7 @@ fastqc fastqFile1 fastqFile2 fastqFile3 --outdir=/some/other/dir/
 
 Type of output that can be generated from fastqc
 - Basic statistics
-- Per base sequening quality
+- Per base sequencing quality
 - Per tile sequence quality
 - Per sequence quality scores
 - Per base sequence content
@@ -17,6 +17,6 @@ Type of output that can be generated from fastqc
 - Per base N content
 - Sequence Length Distribution
 - Sequence Duplication Levels
-- Overrepresented seqeunces
+- Overrepresented sequences
 - Adapter content
 - Kmer content
