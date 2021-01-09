@@ -1,6 +1,10 @@
 *Check if the BAMS/SAM file is sorted
 
 samtools stats <file.bam> | grep “is sorted:"
+
+* Count the total number of reads
+
+samtools view -c  <file.bam>
  
 * Count the number of reads by chromosomes
 
