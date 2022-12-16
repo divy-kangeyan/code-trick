@@ -10,3 +10,7 @@ bcftools view —max-alleles 2 input.vcf.gz
 
 bcftools view sample.vcf -S sample file -O z 
 [-O is to output vcf.gz file
+
+* generating a vcf file from pileup
+
+bcftools call -gvcf --consensus file.pileup > file.vcf
