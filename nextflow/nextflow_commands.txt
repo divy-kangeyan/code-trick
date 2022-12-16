@@ -1,0 +1,28 @@
+# nextflow commands
+
+Channel.fromPath(filePath)
+
+process name {
+	publishDir
+	
+	input:
+	
+	output:
+	
+	script:
+	"""
+	
+	""""
+
+}
+
+
+* Running main nextflow script
+
+nf run main.nf
+
+
+* delete a run
+
+
+* restart a run

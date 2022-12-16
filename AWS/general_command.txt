@@ -1,0 +1,23 @@
+* copying files from EC2 to a specific bucket in S3
+
+aws s3 cp file_to_be_copied s3_destination
+
+* To copy a directory to S3
+
+aws s3 cp folder_to_be_copied s3_destination --recursive
+
+* Sync directories and S3 prefixes
+
+aws s3 sync <S3_URL> <Local path>
+
+* Make a bucket
+
+aws s3 mb
+
+* To copy multiple files with the same extension from local to S3
+
+aws s3 cp . s3_destination --recursve --exclude "*" --include "*.ext"
+
+* To Copy multiple file with the same extension from S3 to local
+
+aws s3 s3_destination . --recursve --exclude "*" --include "*.ext"

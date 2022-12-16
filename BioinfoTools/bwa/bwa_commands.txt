@@ -1,0 +1,2 @@
+* Generating a bwa index 
+bwa index -a bwtsw reference.fasta
