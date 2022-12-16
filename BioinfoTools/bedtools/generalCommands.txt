@@ -1,3 +1,9 @@
 * Intersect a vcf file based on a bed file
 
 bedtools intersect -a input.vcf -b File.bed > output.vcf
+
+
+* Intersect and get all the columns in the pair of bed files (adding -wb)
+
+bedrolls intersect -a input_1.bed -b input_2.bed -wb > intersected_file.bed
+

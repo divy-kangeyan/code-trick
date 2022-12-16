@@ -54,3 +54,7 @@ cat in.csv | cut -d, -f1
 * Tar unzip file
 
 tar -xf archive.tar.gz
+
+* Find files with certain extension in all subdirectories (absolute path) but with some matching with the directory name
+
+find "$(pwd)" - wholename "txt"

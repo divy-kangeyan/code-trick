@@ -5,3 +5,7 @@ sed -i 's/abc/abcd/g' in.txt
 * Find the Nth line in a file
 
 sed -n ’N{p;q}’ Filename.ext
+
+* Removing the last N lined of a file
+
+sed -n N file.txt

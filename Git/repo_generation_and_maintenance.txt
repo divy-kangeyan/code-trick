@@ -58,3 +58,14 @@ git push -u origin branch_name
 Delete a local branch
 
 git branch -d localBranch
+
+
+Updating local branch if the remote branch changes
+
+git config remote.origin.url git_ssh_key
+
+
+Remove a remote link
+
+git remote remove origin
+

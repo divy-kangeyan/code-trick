@@ -12,3 +12,7 @@ sra-tools can also convert any type of sequencing file to and sra file
 
 
 * Download the fastq file given an SRA ID
+
+* Download an aligned file
+
+sam-dump SRA_id > SRA_id.sam
