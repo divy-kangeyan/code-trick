@@ -1,0 +1,74 @@
+* List all the screen session
+
+screen -ls
+
+* Reattaching one of the remaining screen session
+
+screen -x
+
+* Detaching from a screen session
+
+ctrl+a then d
+
+* Closing an open screen
+
+screen -XS scree_name quit
+
+* put this in ~/.screenrc
+
+escape ^Oo
+# caption always "%n(%t): %C"
+# caption always "%3n %t%? @%u%?%? [%h]%?%=%c"
+# caption always "%{=kw}%?%-Lw%?{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
+#shelltitle "
+hardstatus alwayslastline
+hardstatus string '%{- kG}[%{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}]'..
+
+defscrollback 70000
+startup_message off
+hardstatus on
+hardstatus alwayslastline
+
+shelltitle "$ |bash"
+
+#screen -t browse
+#screen -t editor
+#screen -t compiler
+
+* Start a screen session
+
+screen -S session_name
+
+* Connect to an existing session
+
+screen -r session_name
+
+* Create a new screen window
+
+ctrl-o ctrl-c
+
+* Switch to next screen window
+
+ctrl-o ctrl-n
+
+* Switch to previous window
+
+ctrl-o ctrl-p
+
+* Disconnect from a screen
+
+ctrl-o ctrl-d
+
+* Switch to a specific window
+
+ctrl-o #
+
+
+
+
+
+
+
+
+
+
